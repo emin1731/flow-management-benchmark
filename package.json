@@ -8,6 +8,8 @@
     "start": "node src/server.js",
     "test": "jest --runInBand",
     "benchmark": "node src/diff/run-benchmark.js",
+    "benchmark:json": "node src/diff/run-benchmark.js --json",
+    "benchmark:strict": "node src/diff/run-benchmark.js --strict --only=fingerprint-flatten",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
