@@ -4,10 +4,21 @@ const deepEquality = require('./deep-equality');
 const recursiveJsonDiff = require('./recursive-json-diff');
 const hierarchicalKeyedDiff = require('./hierarchical-keyed-diff');
 const fingerprintFlatten = require('./fingerprint-flatten');
+const recursiveMerkleDiff = require('./recursive-merkle-diff');
+const jsondiffpatchKeyed = require('./jsondiffpatch-keyed');
+const treeEditDistance = require('./tree-edit-distance');
 const { assertValidAlgorithm } = require('../algorithm.interface');
 
 /** All registered diff algorithms, validated against the shared contract. */
-const algorithms = [deepEquality, recursiveJsonDiff, hierarchicalKeyedDiff, fingerprintFlatten];
+const algorithms = [
+  deepEquality,
+  recursiveJsonDiff,
+  hierarchicalKeyedDiff,
+  fingerprintFlatten,
+  recursiveMerkleDiff,
+  jsondiffpatchKeyed,
+  treeEditDistance,
+];
 
 algorithms.forEach(assertValidAlgorithm);
 
@@ -30,4 +41,7 @@ module.exports = {
   recursiveJsonDiff,
   hierarchicalKeyedDiff,
   fingerprintFlatten,
+  recursiveMerkleDiff,
+  jsondiffpatchKeyed,
+  treeEditDistance,
 };
